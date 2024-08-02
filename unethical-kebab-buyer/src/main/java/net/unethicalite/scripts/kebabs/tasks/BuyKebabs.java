@@ -4,17 +4,42 @@ import net.unethicalite.api.entities.NPCs;
 import net.unethicalite.api.items.Inventory;
 import net.unethicalite.api.movement.Movement;
 import net.unethicalite.api.movement.Reachable;
-import net.unethicalite.api.widgets.Dialog;
-import net.runelite.api.DialogOption;
 import net.runelite.api.ItemID;
 import net.runelite.api.NPC;
+import net.runelite.api.Player;
+import net.unethicalite.api.entities.Players;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 public class BuyKebabs implements ScriptTask
 {
+
+	private int getRandomDelay(int min, int max)
+	{
+		return ThreadLocalRandom.current().nextInt(min, max + 1);
+	}
+
+	private void waitForIdle()
+	{
+		Player local = Players.getLocal();
+		while (local.isMoving() || local.isAnimating() || local.isInteracting())
+		{
+			try
+			{
+				Thread.sleep(2000); // Wait for 500 ms before checking again
+			}
+			catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+
+
 	@Override
 	public boolean validate()
 	{
-		return !Inventory.isFull() && Inventory.contains(ItemID.COINS_995);
+		return !Inventory.isFull() && Inventory.contains(ItemID.FISHING_ROD) && Inventory.contains(ItemID.SANDWORMS);
 	}
 
 	@Override
@@ -23,34 +48,29 @@ public class BuyKebabs implements ScriptTask
 		if (!Movement.isRunEnabled())
 		{
 			Movement.toggleRun();
-			return 1000;
+			return getRandomDelay(800, 2500);
 		}
 
 		if (Movement.isWalking())
 		{
-			return 1000;
+			return getRandomDelay(800, 2500);
 		}
 
-		NPC karim = NPCs.getNearest("Karim");
-		if (karim == null)
+		NPC spot = NPCs.getNearest("Rod Fishing spot");
+		if (spot == null)
 		{
-			Movement.walkTo(3274, 3181, 0);
-			return 1000;
+			Movement.walkTo(1824, 3772, 0);
+			return getRandomDelay(800, 2500);
 		}
 
-		if (!Reachable.isInteractable(karim))
+		if (!Reachable.isInteractable(spot))
 		{
-			Movement.walkTo(karim);
-			return 1000;
+			Movement.walkTo(spot);
+			return getRandomDelay(800, 2500);
 		}
 
-		Dialog.invokeDialog(
-				DialogOption.NPC_CONTINUE,
-				DialogOption.CHAT_OPTION_TWO,
-				DialogOption.PLAYER_CONTINUE
-		);
-
-		karim.interact("Talk-to");
-		return 300;
+		spot.interact("Bait");
+		waitForIdle();
+		return getRandomDelay(800, 2500);
 	}
 }

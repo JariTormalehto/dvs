@@ -8,7 +8,7 @@ import net.runelite.client.plugins.PluginDescriptor;
 import org.pf4j.Extension;
 
 // This annotation is required in order for the client to detect it as a plugin/script.
-@PluginDescriptor(name = "Unethical Kebab Buyer", enabledByDefault = false)
+@PluginDescriptor(name = "[H]Anglerfish", enabledByDefault = false)
 @Extension
 public class KebabBuyer extends Script
 {
