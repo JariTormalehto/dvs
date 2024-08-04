@@ -6,7 +6,7 @@
   "id": "unethicalkebabbuyer-plugin",
   "releases": [{
     "date": "2024-08-02",
-    "sha512sum": "4FB6F21221DA6383AF8EA0272B588B771AF62C7AD21645C32B031A5A6DB959C3ED9D2448EE2A3DEEECDE0DC35D0E6FAB7E91A06F7F29DE9004A03D68079F5DDF",
+    "sha512sum": "BE858F697004C8261DEDCFB84719DBB8ECB7C384954099E8B0D862871AD5ED6BD4B14EBB961CC161B4C5FF55C03A609D2D2C608C4AF2B706BCD156CEC964AAAD",
     "version": "0.0.1",
     "url": "https://github.com/JariTormalehto/dvs/blob/master/release/unethical-kebab-buyer-0.0.1.jar?raw=true",
     "requires": "^1.0.0"
@@ -14,12 +14,12 @@
 }, {
   "projectUrl": "",
   "provider": "Hellenism",
-  "name": "Unethical Quester",
+  "name": "[H]Quester",
   "description": "Does quests for ou",
-  "id": "unethicalquester-plugin",
+  "id": "hquester-plugin",
   "releases": [{
     "date": "2024-08-02",
-    "sha512sum": "31105C8D893C59721F93BD074944484D7B6C03E519CF4EE3746D5D9BEB1B29542EDDA5D723A0BCF4D3ABA8372F5611F6C2313A94ECA73D886512245ACAFD2325",
+    "sha512sum": "B989BF8BD0EE829DBC105BED9B75C83102B7E982C39BF6CC9631AB934EFC858EEB4D4E14F4DF552F3425F640AECA83F8268E78479A027F37E955AA2579980414",
     "version": "0.0.1",
     "url": "https://github.com/JariTormalehto/dvs/blob/master/release/unethical-quester-0.0.1.jar?raw=true",
     "requires": "^1.0.0"

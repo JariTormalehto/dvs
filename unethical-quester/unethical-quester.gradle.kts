@@ -1,6 +1,6 @@
 version = "0.0.1"
 
-project.extra["PluginName"] = "Unethical Quester"
+project.extra["PluginName"] = "[H]Quester"
 project.extra["PluginDescription"] = "Does quests for ou"
 
 tasks {

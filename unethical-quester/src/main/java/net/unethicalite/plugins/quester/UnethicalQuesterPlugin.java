@@ -9,7 +9,7 @@ import net.runelite.client.plugins.PluginDescriptor;
 import org.pf4j.Extension;
 
 @Extension
-@PluginDescriptor(name = "Unethical Quester", enabledByDefault = false)
+@PluginDescriptor(name = "[H]Quester", enabledByDefault = false)
 @Slf4j
 public class UnethicalQuesterPlugin extends Plugin
 {
